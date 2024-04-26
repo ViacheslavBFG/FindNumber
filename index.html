@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crack The Code!</title>
+    <link href="./output.css" rel="stylesheet">
+
+</head>
+
+<body class=" bg-gray-500">
+    <header class=" pl-20 pr-20 pt-20">
+        <div class="flex justify-around">
+            <button class="border-4 p-4 border-black hover:bg-slate-100 restart">Again!</button>
+            <p>(Between 1 and 20)</p>
+        </div>
+        <h1 class="flex justify-center mt-10 text-2xl header">Crack The Code</h1>
+        <div
+            class=" flex justify-center items-center mt-10 p-10  w-auto  border-black border-4 number font-bold text-4xl">
+            ?
+        </div>
+    </header>
+
+    <section class="flex justify-around pt-20 pl-20 pr-20">
+        <div class="flex flex-col">
+            <input type="number" class="border-4 p-4 w-44 border-black indent-12 bg-gray-300 guess text-xl">
+            <button class="mt-10 p-2 border-4 border-black check hover:bg-slate-100">Check!</button>
+        </div>
+        <div>
+            <p class="pt-6 message">❓ Start guessing...</p>
+            <p class="pt-10">💖 Score : <span class="score">5</span></p>
+            <p class="pt-6">Hightscore:</p>
+        </div>
+    </section>
+    <script src="/script.js"></script>
+</body>
+
+</html>
