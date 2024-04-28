@@ -1,10 +1,11 @@
 "use strict";
 
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
-let numberScore = 5;
+let numberScore = 7;
+let highScore = 0;
 
 document.querySelector(".restart").addEventListener("click", function () {
-  numberScore = 5;
+  numberScore = 7;
   secretNumber = Math.trunc(Math.random() * 20) + 1;
 
   document.querySelector(".score").textContent = numberScore;
@@ -25,6 +26,22 @@ document.querySelector(".check").addEventListener("click", function () {
     document.querySelector("body").style.backgroundColor = "#60b347";
     document.querySelector(".header").textContent = "👏👏👏 YOU WIN ";
     document.querySelector(".number").textContent = secretNumber;
+    if (numberScore > highScore) {
+      highScore = numberScore;
+      document.querySelector(".hightscore").textContent = highScore;
+    //   
+    } else if (inputNumber !== secretNumber) {
+      if (numberScore > 1) {
+        document.querySelector(".message").textContent =
+          inputNumber > secretNumber ? "😲 Too high" : "🤷‍♂️ Too low";
+        numberScore--;
+        document.querySelector(".score").textContent = numberScore;
+      } else {
+        document.querySelector(".message").textContent = "💀 GAME OVER +_+";
+        document.querySelector(".score").textContent = 0;
+        document.querySelector("body").style.backgroundColor = "red";
+      }
+    } 
   } else if (inputNumber > secretNumber) {
     if (numberScore > 1) {
       document.querySelector(".message").textContent = "😲 Too high";
