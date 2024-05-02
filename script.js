@@ -29,32 +29,11 @@ document.querySelector(".check").addEventListener("click", function () {
     if (numberScore > highScore) {
       highScore = numberScore;
       document.querySelector(".hightscore").textContent = highScore;
-    //   
-    } else if (inputNumber !== secretNumber) {
-      if (numberScore > 1) {
-        document.querySelector(".message").textContent =
-          inputNumber > secretNumber ? "😲 Too high" : "🤷‍♂️ Too low";
-        numberScore--;
-        document.querySelector(".score").textContent = numberScore;
-      } else {
-        document.querySelector(".message").textContent = "💀 GAME OVER +_+";
-        document.querySelector(".score").textContent = 0;
-        document.querySelector("body").style.backgroundColor = "red";
-      }
-    } 
-  } else if (inputNumber > secretNumber) {
-    if (numberScore > 1) {
-      document.querySelector(".message").textContent = "😲 Too high";
-      numberScore--;
-      document.querySelector(".score").textContent = numberScore;
-    } else {
-      document.querySelector(".message").textContent = "💀 GAME OVER +_+";
-      document.querySelector(".score").textContent = 0;
-      document.querySelector("body").style.backgroundColor = "red";
     }
-  } else if (inputNumber < secretNumber) {
+  } else if (inputNumber !== secretNumber) {
     if (numberScore > 1) {
-      document.querySelector(".message").textContent = "🤷‍♂️ Too low";
+      document.querySelector(".message").textContent =
+        inputNumber > secretNumber ? "😲 Too high" : "🤷‍♂️ Too low";
       numberScore--;
       document.querySelector(".score").textContent = numberScore;
     } else {
