@@ -3,13 +3,16 @@
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
 let numberScore = 7;
 let highScore = 0;
+const displayMessage = function (message) {
+  document.querySelector(".message").textContent = message;
+};
 
 document.querySelector(".restart").addEventListener("click", function () {
   numberScore = 7;
   secretNumber = Math.trunc(Math.random() * 20) + 1;
 
   document.querySelector(".score").textContent = numberScore;
-  document.querySelector(".message").textContent = "❓ Start guessing...";
+  displayMessage("❓ Start guessing...");
   document.querySelector(".number").textContent = "?";
   document.querySelector(".guess").value = "";
   document.querySelector("body").style.backgroundColor = "#6b7280";
