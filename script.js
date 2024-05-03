@@ -1,5 +1,6 @@
 "use strict";
-
+const musicGameOver = document.querySelector(".gameover");
+const musicYouWin = document.querySelector(".youwin");
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
 let numberScore = 7;
 let highScore = 0;
@@ -29,6 +30,7 @@ document.querySelector(".check").addEventListener("click", function () {
     document.querySelector("body").style.backgroundColor = "#60b347";
     document.querySelector(".header").textContent = "👏👏👏 YOU WIN ";
     document.querySelector(".number").textContent = secretNumber;
+    musicYouWin.play();
     if (numberScore > highScore) {
       highScore = numberScore;
       document.querySelector(".hightscore").textContent = highScore;
@@ -43,6 +45,7 @@ document.querySelector(".check").addEventListener("click", function () {
       document.querySelector(".message").textContent = "💀 GAME OVER +_+";
       document.querySelector(".score").textContent = 0;
       document.querySelector("body").style.backgroundColor = "red";
+      musicGameOver.play();
     }
   }
 });
